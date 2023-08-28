@@ -1,24 +1,12 @@
 from telegram import Update
 from telegram.ext import Updater, filters, ContextTypes
 from telegram.ext import MessageHandler, CommandHandler, Application
-
-
-# 替換為你的機器人令牌
-TOKEN = "6538289312:AAHLHWTIlwqJ8CpeyX8XFW4rIZge9tgbem4"
-
-# Commands
-async def start_command(update:Update,context:ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hi Im a temporary test bot. I can repeat any thing you send in chat.")
-
-async def help_command(update:Update,context:ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hi Nothing I can help you now :( ")
-
-async def swear_command(update:Update,context:ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("FucK You")
+from config import TOKEN
+from command import *
 
 #Response
 def handle_response(text:str) -> str:
-    return text   
+    return text 
 
 async def handle_message(update:Update ,context:ContextTypes.DEFAULT_TYPE):
     
